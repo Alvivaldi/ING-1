@@ -1,0 +1,10 @@
+Liste des notes CY-TECH : ING1 (2025-2026)
+Nom étudiant:note
+Alexis:10
+Nino:5
+Romu:18
+Tom:15
+Anton:19.5
+Charbelle:2
+Toto:20
+Titi:7  
