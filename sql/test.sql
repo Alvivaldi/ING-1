@@ -1,3 +1,10 @@
+/*
+sudo service mysl start
+mysql -u root -p
+use pokemons;
+
+*/
+
 DROP TABLE IF EXISTS Apparition;
 DROP TABLE IF EXISTS Pokemon;
 DROP TABLE IF EXISTS Joueur;
