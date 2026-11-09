@@ -20,8 +20,4 @@ char* multiply(int a, int b){
 
 int main(void) {
     printf("hello word");
-    int a,b;
-    scanf("%d",&a);
-    scanf("%d",&b);
-    printf("%s",multiply(a,b));
   }
