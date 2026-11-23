@@ -1,7 +1,16 @@
 /*
-sudo service mysl start
-mysql -u root -p
+sudo service mysql start
+sudo mysql -u root -p
 use pokemons;
+source chemin/pokemon_tables.sql ;
+
+
+show databes; montre liste des databases
+use pokemons; utilise la base
+show table; montre table actuel
+
+select * from Equipe; montre un truc
+insert into Equipe values (uhumfsjkjbvkjs);
 
 */
 
