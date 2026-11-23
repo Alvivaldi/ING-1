@@ -1,4 +1,4 @@
-#include"student.c"
+#include"student.h"
 #include<stdlib.h>
 
 
@@ -19,7 +19,7 @@ void destroy_class(Class* promo){
     }
     //c'est des ; et pas des ,
     for(int i=0;i< promo->nb_students;i++){
-        destroy_student(&promo->student[i]);
+        destroy_student(&promo->students[i]);
     }
 
     free(promo->students);

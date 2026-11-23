@@ -7,7 +7,7 @@
 #define COURSE_H
 
 #include<stdio.h>
-#include "grade.h"
+#include "grades.h"
 /**
 @brief represent course with grade name coef and average
  */

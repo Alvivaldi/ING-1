@@ -1,9 +1,9 @@
 /**
-@file grade.h
+@file grades.h
 @brief Structure to manage aray of grades
 */
-#ifndef GRADE_H
-#define GRADE_H
+#ifndef GRADES_H
+#define GRADES_H
 
 
 
@@ -18,6 +18,6 @@ typedef struct{
 }Grades;
 
 int init_grades(Grades* grades);
-void destroy_grades(Grades* grades)
+void destroy_grades(Grades* grades);
 
 #endif

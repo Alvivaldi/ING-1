@@ -1,4 +1,4 @@
-#include "grade.h"
+#include "grades.h"
 #include <stdlib>
 
 int init_grades(Grades* grades){
@@ -11,16 +11,16 @@ int init_grades(Grades* grades){
         
 }
 
-int init_grades(Grades* grades){
+void destroy_grades(Grades* grades){
     if(grades==NULL){
         return;
     }
 
-    free(grades->values)
+    free(grades->values);
     //free uniquement sur truc crée par malloc
     grades->values=NULL;
     grades->size=0;
     
-    return 0;
+    return;
         
 }
