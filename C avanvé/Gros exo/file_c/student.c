@@ -88,7 +88,7 @@ int add_course_to_student(Student* student, char* name, float coef){
 
 Course* find_course(Student* student, char* name){
     if (student==NULL || name==NULL){
-        return -1;
+        return NULL;
     }
     for (int i=0;i<student->size_courses;i++){
 
@@ -108,15 +108,16 @@ int update_student_avg(Student* student){
     float sum_coef=0;
     for(int i=0;i<student->size_courses;i++){
 //consigne on prend pas en compte course ou pas éval
-        if(student->courses[i].grades_size>0){
+        if((student->courses[i].grades.size)>0){
             sum+=(student->courses[i].avg)*student->courses[i].coef;
             sum_coef+=student->courses[i].coef;
         }
         
     }
-    if (coef_sum > 0.0f) {
+    if (sum_coef> 0.0f) {
         student->avg = sum / sum_coef;
     } else {
         student->avg = 0.0f;
     }
+    return 0;
 }

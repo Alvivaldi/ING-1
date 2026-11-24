@@ -35,6 +35,9 @@ int add_student_to_class(Class* promo,int id, char* fname, char* lname, int age)
     }
     //on crée adresse vers nouveau tableau de students qui est trop petit pour ajouter le nouveau, c'est a ce moment la que on réalic
     Student* tmp = realloc(promo->students,(promo->nb_students+1)*sizeof(Student));
+    if(tmp==NULL){
+        return -1;
+    }
     promo->students=tmp;
     if (init_student(&promo->students[promo->nb_students],id, fname, lname,age)!=0){
         return -1;
