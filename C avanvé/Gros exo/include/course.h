@@ -22,5 +22,7 @@ typedef struct{
 int init_course(Course* course, char* name, float coef);
 void destroy_course(Course *course);
 
+int update_course_avg(Course* course);
+int add_grade_to_course(Course* course,float value);
 
 #endif

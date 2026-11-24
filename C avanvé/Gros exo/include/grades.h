@@ -20,4 +20,6 @@ typedef struct{
 int init_grades(Grades* grades);
 void destroy_grades(Grades* grades);
 
+int add_grade(Grades* grades,float value);
+
 #endif
