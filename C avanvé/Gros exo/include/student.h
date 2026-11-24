@@ -25,4 +25,8 @@ typedef struct{
 int init_student(Student *student, int id, const char *fname, const char *lname, int age);
 void destroy_student(Student *student);
 
+int add_course_to_student(Student* student, char* name, float coef);
+Course* find_course(Student* student, char* name);
+int update_student_avg(Student* student);
+
 #endif

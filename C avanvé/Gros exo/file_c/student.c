@@ -65,3 +65,58 @@ void destroy_student(Student *student) {
     student->avg = 0.0;
     student->age = 0;
 }
+
+
+int add_course_to_student(Student* student, char* name, float coef){
+    if (student==NULL || name==NULL){
+        return -1;
+    }
+    Course* tmp=realloc(student->courses,(student->size_courses +1)*sizeof(Course));
+    if (tmp==NULL){
+        return -1;
+    }
+    student->courses=tmp;
+    //Course* = tableau de course de l'édutiant, ici on ajoute nouvelle matiere a tableau de course, on initialise nouvelle matière en donnant l'adresse d'un nouveau course, qu'on a allouer avant 
+    if (init_course(&student->courses[student->size_courses],name,coef)!=0){
+        return -1;
+    }
+
+    student->size_courses++;
+    return 0;
+
+}
+
+Course* find_course(Student* student, char* name){
+    if (student==NULL || name==NULL){
+        return -1;
+    }
+    for (int i=0;i<student->size_courses;i++){
+
+        //strcmp pour comparer 2 chaines de caractère 
+        if(strcmp(student->courses[i].name,name)==0){
+            return &student->courses[i];
+        }
+    }
+    return NULL;
+}
+
+int update_student_avg(Student* student){
+    if (student==NULL){
+        return -1;
+    }
+    float sum=0;
+    float sum_coef=0;
+    for(int i=0;i<student->size_courses;i++){
+//consigne on prend pas en compte course ou pas éval
+        if(student->courses[i].grades_size>0){
+            sum+=(student->courses[i].avg)*student->courses[i].coef;
+            sum_coef+=student->courses[i].coef;
+        }
+        
+    }
+    if (coef_sum > 0.0f) {
+        student->avg = sum / sum_coef;
+    } else {
+        student->avg = 0.0f;
+    }
+}

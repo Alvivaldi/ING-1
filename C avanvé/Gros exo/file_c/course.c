@@ -35,3 +35,40 @@ void destroy_course(Course *course){
     course->avg=0.0;
 }
 
+
+
+
+int update_course_avg(Course* course){
+    if(course==NULL){
+        return -1;
+    }
+
+    if (course->grades.size == 0) {
+        course->avg = 0.0f;
+        return 0;
+    }
+
+
+    float sum=0;
+    for(int i=0;i<course->grades.size;i++){
+        sum+=course->grades.values[i];
+    }
+    course->avg=sum/course->grades.size;
+    return 0;
+
+}
+
+int add_grade_to_course(Course* course,float value){
+    if (course==NULL){
+        return -1;
+    }
+
+    if(add_grade(&course->grades,value)!=0){
+        return -1;
+    }
+    if(update_course_avg(course)!=0){
+        return -1;
+    }
+    return 0;
+
+}
