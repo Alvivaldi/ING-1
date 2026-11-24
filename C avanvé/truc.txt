@@ -1,0 +1,1 @@
+clear && gcc -o nomfichier.c exec && ./exec
